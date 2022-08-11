@@ -1,11 +1,310 @@
+/* body {
+
+  background-image: url(../src/fond.png);
+
+  
+} */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
 .App {
   text-align: center;
 }
+.fond {
+ 
+  background-image: url(../public/fond.png);
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  background-size: cover;
+  background-position: center;
+  /* background-repeat: no-repeat;
+  width: 1440px;
+  height: 1024px; */
+  /* background-position-x: right;
+  background-position-y: top; */
+}
+.food{
+  width: 200px;
+  letter-spacing: 7px;
 
+  height: 80px;
+  margin: 100px auto;
+  /* background: #3b3c47; */
+  position: relative;
+  left: 20%;
+  font-size: 50px;
+  top: 115px;
+  color: #3b3c47;
+  /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O; */
+  
+}
+.cleanness{
+  width:200px;
+  height: 100px;
+  margin: 100px auto;
+  /* background: #3b3c47; */
+  position: relative;
+  left: 20%;
+  font-size: 50px;
+  top: 160px;
+  letter-spacing: 7px;
+
+  color: #3b3c47;
+}
+.playing{
+  width: 200px;
+  height: 100px;
+  margin: 100px auto;
+  /* background: #3b3c47; */
+  position: relative;
+  left: 20%;
+  top: 150px;
+  font-size: 50px;
+  letter-spacing: 7px;
+
+  color: #3b3c47;
+}
+.water{
+  width: 200px;
+  height: 100px;
+  margin: 100px auto;
+  /* background: #3b3c47; */
+  position: relative;
+  left: 20%;
+  font-size: 50px;
+  top: 150px;
+  letter-spacing: 7px;
+  /* font-family: 'Courier New', Courier, monospace; */
+
+  color: #3b3c47;
+}
+h1{
+  margin: 0;
+  padding: 0;
+  font-family: cartoon;
+  font-size: 2.5em;
+  /* text-transform: uppercase; */
+  text-align: center;
+  position: relative;
+  top: 30%;
+  color: #fff;
+  transform: translateY(-30%);
+ 
+}
+.petit{
+  /* width: 891px;
+  height: 188px; */
+  margin-left: 50%;
+}
+.imag1{
+  margin-top: 2%;
+  min-width: 100%;
+  min-height: 100%;
+  margin-left: -50%;
+}
+.imag2{
+  width: 120px;
+  height: 100px;
+  /* margin-right: 100px; */
+  margin-top: -100%;
+  margin-left: 2%;
+  /* margin-bottom: -80% */
+
+  
+}
+.petit1{
+  display: flex;
+  position: absolute;
+  margin-top: -980px;
+  margin-left: 20px;
+}
+.para{
+  font-family: cartoon;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 10px;
+  margin-top: -210px;
+  color: #282c34;
+}
+select{
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  /* font-size: 2rem; */
+  padding: 1em 7em 1.5em;
+  background: #4d5061;
+  color: white;
+  border: 10;
+  text-align: center;
+  /* font-family: Verdana, Geneva, Tahoma, serif; */
+  /* font-weight: 900; */
+  
+}
+.s1{
+  font-size: 2rem;
+}
+.s2{
+  font-size: 2.03rem;
+}
+.s3{
+  font-size: 1.45rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 120px;
+  /* font-weight: 900;  */
+}
+.s4{
+  font-size: 1.35rem;
+  height: 120px;
+  font-family: Verdana, Geneva, Tahoma, serif;
+  /* font-weight: 900;  */
+
+}
+.custom-select{
+  position: absolute;
+  top: 28%;
+  left: 17%;
+
+}
+/* .custom-arrow{
+  position: absolute;
+  top: 0;
+  right: 540px;
+  display: block;
+  background: #3b3c47;
+  height: 100%;
+  width: 4rem;
+  pointer-events: none;
+}
+.custom-arrow::before,.custom-arrow::after{
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.custom-arrow::before{
+  border-left: 1em solid transparent;
+  border-right: 1em solid transparent;
+  border-bottom: 1em solid rgba(255,255,255,0.5);
+top: 30%;
+}
+.custom-arrow::after{
+  border-left: 1em solid transparent;
+  border-right: 1em solid transparent;
+  border-top: 1em solid rgba(255,255,255,0.5);
+top: 60%;
+} */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
+.custom-select1{
+  position: absolute;
+  top: 44%;
+  left: 17%;
+}
+/* .custom-arrow1{
+  position: absolute;
+  top: 0;
+  right: 540px;
+  display: block;
+  background: #3b3c47;
+  height: 100%;
+  width: 4rem;
+  pointer-events: none;
+}
+.custom-arrow1::before,.custom-arrow1::after{
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.custom-arrow1::before{
+  border-left: 1em solid transparent;
+  border-right: 1em solid transparent;
+  border-bottom: 1em solid rgba(255,255,255,0.5);
+top: 30%;
+}
+.custom-arrow1::after{
+  border-left: 1em solid transparent;
+  border-right: 1em solid transparent;
+  border-top: 1em solid rgba(255,255,255,0.5);
+top: 60%;
+} */
+
+.custom-select2{
+  position: absolute;
+  top: 60%;
+  left: 17%;
+}
+/* .custom-arrow2{
+  position: absolute;
+  top: 0;
+  right: 540px;
+  display: block;
+  background: #3b3c47;
+  height: 100%;
+  width: 4rem;
+  pointer-events: none;
+}
+.custom-arrow2::before,.custom-arrow2::after{
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.custom-arrow2::before{
+  border-left: 1em solid transparent;
+  border-right: 1em solid transparent;
+  border-bottom: 1em solid rgba(255,255,255,0.5);
+top: 30%;
+}
+.custom-arrow2::after{
+  border-left: 1em solid transparent;
+  border-right: 1em solid transparent;
+  border-top: 1em solid rgba(255,255,255,0.5);
+top: 60%;
+} */
+.custom-select3{
+  position: absolute;
+  top: 75%;
+  left: 17%;
+}
+/* .custom-arrow3{
+  position: absolute;
+  top: 0;
+  right: 540px;
+  display: block;
+  background: #3b3c47;
+  height: 100%;
+  width: 4rem;
+  pointer-events: none;
+}
+.custom-arrow3::before,.custom-arrow3::after{
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.custom-arrow3::before{
+  border-left: 1em solid transparent;
+  border-right: 1em solid transparent;
+  border-bottom: 1em solid rgba(255,255,255,0.5);
+top: 30%;
+}
+.custom-arrow3::after{
+  border-left: 1em solid transparent;
+  border-right: 1em solid transparent;
+  border-top: 1em solid rgba(255,255,255,0.5);
+top: 60%;
+} */
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
