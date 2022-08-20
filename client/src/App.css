@@ -26,17 +26,15 @@
 .food{
   width: 200px;
   letter-spacing: 7px;
-
   height: 80px;
   margin: 100px auto;
   /* background: #3b3c47; */
   position: relative;
   left: 20%;
   font-size: 50px;
-  top: 115px;
+  top: 130px;
   color: #3b3c47;
   /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O; */
-  
 }
 .cleanness{
   width:200px;
@@ -46,7 +44,7 @@
   position: relative;
   left: 20%;
   font-size: 50px;
-  top: 160px;
+  top: 170px;
   letter-spacing: 7px;
 
   color: #3b3c47;
@@ -58,7 +56,7 @@
   /* background: #3b3c47; */
   position: relative;
   left: 20%;
-  top: 150px;
+  top: 170px;
   font-size: 50px;
   letter-spacing: 7px;
 
@@ -305,12 +303,65 @@ top: 30%;
 top: 60%;
 } */
 
+@media screen and (min-width: 600px) {
+  .petit {
+    width: min-content;
+    margin-top: 2%;
+  }
+  /* .about__me {
+      width: 50%;
+      margin: 2rem auto 4rem;
+  } */
+  .para  {
+    margin-top: -150px;
+    font-size: xx-large ;
+    margin-bottom: -70px;
+  } 
+  .imag2{
+    max-width: 40px;
+    margin-top: 20px;
+    max-height: min-content;
+  }
+}
+/* @media screen and (max-width: 969px) {
+  .petit {
+    width: min-content;
+    margin-top: 4%;
+  }
 
-@media (prefers-reduced-motion: no-preference) {
+  .para  {
+    margin-top: -140px;
+    font-size: xx-large ;
+    margin-bottom: -155px;
+    
+  
+  } 
+ 
+ 
+  .imag2{
+    max-width: 40px;
+    margin-top: 60px;
+    max-height: min-content;
+  }
+} */
+/* @media screen and (max-width: 600px) {
+  .petit {
+    width: max-content;
+    margin-top: 10%;
+  }
+  .para  {
+    margin-top: -300px;
+    font-size: xx-large ;
+    margin-bottom: -100px;
+  } 
+  
+} */
+
+/* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
+} */
 
 .App-header {
   background-color: #282c34;
