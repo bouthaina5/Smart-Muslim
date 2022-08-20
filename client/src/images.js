@@ -11,10 +11,13 @@ function Images(){
             <img className='imag1' src={img1} />
            </div>
             <p className='para'>
+              
             You can choose which doua 
             <br></br>
             can perform a certain action
+          
             </p> 
+
        
             <h1 className='food'>Food</h1>
             <h1 className='water'>Water</h1>
