@@ -4,11 +4,14 @@ import './index.css';
 import App from './App';
 // import images from './images'
 import reportWebVitals from './reportWebVitals';
+import { ThemeProvider } from './components/contexts/theme'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <ThemeProvider>
     <App />
+    </ThemeProvider>
   </React.StrictMode>
 );
 
