@@ -12,6 +12,7 @@
     "cross-domain-storage": "^2.0.7",
     "nanoid": "^4.0.0",
     "plotly.js-dist": "^2.14.0",
+    "node-sass": "^7.0.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
