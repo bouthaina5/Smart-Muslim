@@ -9,7 +9,6 @@ import SingleAnimal  from './pages/SingleAnimal';
 
 function App() {
   return (
-
       <BrowserRouter>
       <Routes>
         <Route path='/' element={<Animals />}/>

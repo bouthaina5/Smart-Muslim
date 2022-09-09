@@ -22,7 +22,9 @@ const Animals = () => {
   return (
     <main className='animals-container'>
         <img src={exit} className='exit' alt=""/>
+        <NavLink to ='/idea'>
         <img src={param} className='param' alt=''/>
+        </NavLink>
         <p className='choose-animal'>Choose Your Animal </p>
         <div className='animals-list'>{animalsList}</div>
     </main>

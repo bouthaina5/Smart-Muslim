@@ -19,17 +19,23 @@ body{
 }
 .fond {
  
-  background-image: url(../public/fond.png);
-  position: fixed;
+  background-image: url(./assets/fond.png);
+  /* position: fixed;
   min-width: 100%;
   min-height: 100%;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat; */
+  width: 100vw;
+  height: 100vh;
+  background-size: 100% 100%;
+  background-position: center;
+  position: fixed;
   background-repeat: no-repeat;
 }
 .backg {
  
-  background-image: url(../public/anim3.png);
+  background-image: url(./assets/anim3.png);
   position: fixed;
   text-align: center;
   width: 100%;
@@ -40,14 +46,14 @@ body{
 }
 
 .food{
-  width: 200px;
+  width: 100px;
   letter-spacing: 7px;
   height: 80px;
   margin: 100px auto;
-  position: relative;
-  left: 20%;
-  font-size: 50px;
-  top: 130px;
+  position: absolute;
+  left: 60%;
+  font-size: 25px;
+  top:30%;
   color: #3b3c47;
 }
 
@@ -55,10 +61,10 @@ body{
   width: 200px;
   height: 100px;
   margin: 100px auto;
-  position: relative;
-  left: 20%;
-  top: 160px;
-  font-size: 50px;
+  position: absolute;
+  left: 57%;
+  top: 76%;
+  font-size: 25px;
   letter-spacing: 7px;
   color: #3b3c47;
 }
@@ -66,10 +72,10 @@ body{
   width: 200px;
   height: 100px;
   margin: 100px auto;
-  position: relative;
-  left: 20%;
-  top: 160px;
-  font-size: 50px;
+  position: absolute;
+  left:57%;
+  top: 61%;
+  font-size: 25px;
   letter-spacing: 7px;
   color: #3b3c47;
 }
@@ -77,10 +83,10 @@ body{
   width: 200px;
   height: 100px;
   margin: 100px auto;
-  position: relative;
-  left: 20%;
-  font-size: 50px;
-  top: 150px;
+  position:absolute;
+  left: 57%;
+  font-size: 25px;
+  top: 47%;
   letter-spacing: 7px;
   color: #3b3c47;
 }
@@ -102,15 +108,17 @@ h1{
 }
 .imag1{
   margin-top: 2%;
-  min-width: 100%;
-  min-height: 100%;
+  min-width: 50%;
+  min-height: 50%;
   margin-left: -50%;
+  height: 120px;
+  width: 800px;
 }
 .imag2{
-  width: 120px;
-  height: 120px;
-  margin-top: -100%;
-  margin-left: 2%;
+  width: 70px;
+  height: 50px;
+  margin-top: -90%;
+  margin-left: 10%;
 }
 
 .imag4{
@@ -121,11 +129,10 @@ h1{
 }
 
 .imag3{
-  width: 300px;
-  height: 300px;
-  margin-top: -100%;
-  margin-left: 88%;
-  margin-bottom: -44%;
+  width: 170px;
+  height: 170px;
+  margin-left: 85%;
+  margin-bottom: -40%;
 }
 
 .petit1{
@@ -142,11 +149,11 @@ h1{
 }
 .para{
   font-family: cartoon;
-  font-size: 50px;
+  font-size: 25px;
   font-weight: bold;
   text-align: center;
-  letter-spacing: 10px;
-  margin-top: -210px;
+  top: 5%;
+  letter-spacing: 8px;
   color: #282c34;
 }
 select{
@@ -158,26 +165,25 @@ select{
   text-align: center;  
 }
 .s1{
-  font-size: 2rem;
+  font-size: 1rem;
 }
 .s2{
-  font-size: 2.03rem;
+  font-size: 1rem;
 }
 .s3{
-  font-size: 1.575rem;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  height: 120px;
+  font-size: 1rem;
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 120px; */
 }
 .s4{
-  font-size: 1.78rem;
-  height: 120px;
-  font-family: Verdana, Geneva, Tahoma, serif;
+  font-size: 1rem;
+  /* height: 120px;
+  font-family: Verdana, Geneva, Tahoma, serif; */
 }
 .custom-select{
   position: absolute;
-  top: 28%;
+  top: 40%;
   left: 17%;
-
 }
 
 .animals-list{
@@ -193,8 +199,9 @@ select{
 }
 .custom-select1{
   position: absolute;
-  top: 44%;
+  top: 55%;
   left: 17%;
+  grid-template: auto / auto auto auto;
 }
 .animal-item{
     color: #ffff;
@@ -209,14 +216,16 @@ select{
     color: var(--primary-500);
 }
 .custom-select2{
+
   position: absolute;
-  top: 60%;
+  top: 70%;
   left: 17%;
 }
 
 .custom-select3{
+ 
   position: absolute;
-  top: 75%;
+  top: 85%;
   left: 17%;
 }
 
@@ -228,10 +237,10 @@ select{
   }
   
   .para  {
-    margin-top: -150px;
+    margin-top: -111px;
     font-size: xx-large ;
     margin-bottom: -70px;
-  } 
+  }  
   .imag2{
     max-width: 80px;
     margin-top: 10px;
@@ -328,14 +337,12 @@ select{
 
 .settings {
     display: flex;
-    justify-self: right;
-    align-self: center;
-    padding: 10px;
+    height: 10px;
+    width: 10px;
     position: absolute;
-    height: 70px;
-    width: 70px;
-    margin-left: 1250px;
-    margin-top: 20px;
+    margin-left: 100px;
+    padding: 10px;
+    margin-top: 10px;
 }
 
 .arrow {

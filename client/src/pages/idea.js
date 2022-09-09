@@ -1,12 +1,13 @@
 import React from 'react'; 
+import { NavLink } from 'react-router-dom';
 import img4 from '../assets/retour.png'
 function Idea(){
     return(
         <main className='backg'>
           <div className='petit2'>
-            <a href='#'>
+            <NavLink to='/'>
            <img className='imag4' src={img4} /> 
-           </a>
+           </NavLink>
            </div>
         </main>
     );

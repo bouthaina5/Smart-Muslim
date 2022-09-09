@@ -89,7 +89,7 @@ const SingleAnimal = () => {
             <NavLink to={`/`}>
                 <img  src={arrow} className='arrow' alt=''/>
             </NavLink>
-            <NavLink to={`/`}>
+            <NavLink to={`/images`}>
             <img src={settings} className='settings' alt=''/>
             </NavLink>
             <button className='mic-button' ><img src={mic} className="mic" alt="" onClick={console.log("listen to command")}/></button>
