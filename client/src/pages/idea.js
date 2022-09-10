@@ -5,7 +5,7 @@ function Idea(){
     return(
         <main className='backg'>
           <div className='petit2'>
-            <NavLink to='/'>
+            <NavLink to='/animals'>
            <img className='imag4' src={img4} /> 
            </NavLink>
            </div>

@@ -2,19 +2,20 @@ import { BrowserRouter, Routes , Route } from 'react-router-dom';
 import Images from '../src/pages/images'
 import Prayer from '../src/pages/prayer'
 import Idea from '../src/pages/idea'
-import React, {  useState } from 'react';
+import React from 'react';
 import './App.css';
 import Animals  from './pages/Animals';
 import SingleAnimal  from './pages/SingleAnimal';
 import WelcomePage from './pages/welcomepage';
+import { useState } from 'react';
 
-
-const App = ({navigation}) => {
+const App = () => {
+  const [user,setUser] = useState(null)
   return (
       <BrowserRouter>
       <Routes>
-        <Route path='/welcome' element={<WelcomePage/>}/>
-        <Route path='/' element={<Animals />}/>
+        <Route path='/' element={<WelcomePage setUser={setUser}/>}/>
+        <Route path='/animals' element={<Animals user={user}/>}/>
         <Route path='/:animalID' element={<SingleAnimal/>} />
         <Route path='images' element={<Images/>} />
         <Route path='prayer' element={<Prayer/>} />

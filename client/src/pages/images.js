@@ -21,7 +21,7 @@ function Images(){
             <h1 className='cleanness'>Cleanness</h1>
             <h1 className='playing'>Playing</h1>
               <div className='petit1'>
-            <NavLink to='/'>
+            <NavLink to='/animals'>
            <img className='imag2' src={img2} /> 
             </NavLink>
            </div>

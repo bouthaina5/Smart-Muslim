@@ -86,7 +86,7 @@ const SingleAnimal = () => {
         //const model = await tf.loadLayersModel("C:/Users/Bouthayna Ben Hamida/Desktop/PrayersRecognition.json");
             return (
         <div style={bgStyle} className='backgimage'>
-            <NavLink to={`/`}>
+            <NavLink to={`/animals`}>
                 <img  src={arrow} className='arrow' alt=''/>
             </NavLink>
             <NavLink to={`/images`}>
