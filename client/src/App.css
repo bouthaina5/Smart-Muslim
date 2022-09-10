@@ -1,3 +1,4 @@
+
 body{
     height: 100%;
     margin: 0;
@@ -257,9 +258,25 @@ select{
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
+.bg {
+  color: white;
+  text-align:center;
+ background-image:url('/public/images/bg.png');
+ background-size: contain;
+ background-repeat: no-repeat;
+ background-position: center;
+  height: 100vh;
+}
+input {
+  text-align: center;
+  padding: 1rem;
+  border: 0.1rem solid grey;
+  border-radius: 0.4rem;
+  color:grey;
+  font-size: 1rem;
 
+}
 .animal-image {
     width: 110px;
     height: 115px;
@@ -371,6 +388,16 @@ select{
     width:60px;
     margin-top: 530px;
     margin-left: 1250px;
-
+}
+button {
+  background-color: rgb(137, 182, 127);
+  color: white;
+  padding: 1rem 3rem;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  text-transform: uppercase;
 
 }
