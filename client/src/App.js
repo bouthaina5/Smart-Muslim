@@ -1,25 +1,42 @@
-import logo from './logo.svg';
+import React, {  useState } from 'react';
 import './App.css';
 
-function App() {
+const App = ({navigation}) => {
+  const [user,setUser]=useState({userName:""})
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <div className="bg">
 
+      <h1><br></br><br></br>Welcome to </h1>
+      <h1>Smart-Muslim</h1>
+      <br></br> <br></br> <br></br>
+
+      <formContainer>
+        <form>
+
+          <input
+            type='text'
+            placeholder='Username'
+            name='username'
+            value= {user.userName}
+
+            onChangeText = {(text)=>{
+              setUser({userName:text});
+              }}
+          />
+
+
+
+          <br></br><br></br><br></br>
+          <button title="type" submit onPress={() =>navigation.navigate('HomePage',{"userName":user.userName}) } >start</button>
+
+  
+
+        </form>
+      </formContainer>
+    </div>
+
+  );
+
+
+}
 export default App;
