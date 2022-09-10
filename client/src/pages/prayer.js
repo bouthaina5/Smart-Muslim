@@ -1,6 +1,4 @@
 import {useContext} from 'react';
-// import { Link } from 'react-router-dom'
-
 import Clock from '../components/Clock'
 import HijriDate from '../components/HijriDate'
 import PrayTimes from '../components/PrayTimes'
