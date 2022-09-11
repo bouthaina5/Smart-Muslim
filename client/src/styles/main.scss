@@ -1,0 +1,66 @@
+@import "config";
+@import "clock";
+@import "date";
+@import "prayTime";
+@import "./footer/footer";
+@import "./footer/toggleThemes";
+@import "./footer/settings";
+@import "./footer/radioButton";
+
+/*
+App
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  text-align: center;
+  color: $clr;
+  font-size: 11px;
+  transition: all 0.5s ease;
+  
+}
+
+.dark{
+  background-image: url(https://www.reviewofreligions.org/wp-content/uploads/2020/04/ramadan-3384596_1280.jpg);
+ background-size: cover;
+  background-color: $clr-dark;
+  color: $clr-light;
+}
+
+.light{
+  background-image: url(https://img.freepik.com/premium-photo/islamic-decoration-background-with-arabic-lantern-crescent-star-copy-space_257995-594.jpg?w=2000);
+  background-size: cover;
+  background-color: $clr-light;
+  color: $clr-dark;
+}
+
+@media only screen and (min-width: 360px) {
+  .app {
+    font-size: 12px;
+  }
+}
+
+
+@media only screen and (min-width: 700px) {
+  .app {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .app {
+    font-size: 15px;
+  }
+}

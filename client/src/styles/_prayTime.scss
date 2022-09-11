@@ -1,0 +1,66 @@
+@mixin prayTime {
+    h1,
+    h2 {
+        padding: 0.5em;
+    }
+    ul {
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 1em;
+        
+
+        li {
+            border-radius: 30px;
+            border: solid $clr 2px;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.48); 
+            margin: 2em;
+            padding: 1em;
+            width: 12em;
+            //height: 12em;
+
+            & h3 {
+                font-weight: 800;
+                font-size: 25px;
+                padding: 0.75em 0;
+                // font-size: 20px;
+
+            }
+        }
+    }
+    .remainTime {
+        font-size: 4em;
+        font-weight: 700;
+    }
+}
+
+.prayTimeLight {
+    @include prayTime;
+
+    li {
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.48);
+    }
+    .active {
+        @include active($active-clr-light);
+    }
+    .remainTime {
+        color: $active-clr-light;
+    }
+}
+
+.prayTimeDark {
+    @include prayTime;
+
+    li {
+        box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.48);
+    }
+    .active {
+        @include active($active-clr-dark);
+    }
+    .remainTime {
+        color: $active-clr-dark;
+    }
+}

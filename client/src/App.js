@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import { BrowserRouter, Routes , Route } from 'react-router-dom';
+import Images from '../src/pages/images'
+import Prayer from '../src/pages/prayer'
+import Idea from '../src/pages/idea'
+import React from 'react';
 import './App.css';
+import Animals  from './pages/Animals';
+import SingleAnimal  from './pages/SingleAnimal';
+import WelcomePage from './pages/welcomepage';
+import { useState } from 'react';
 
-function App() {
+const App = () => {
+  const [user,setUser] = useState(null)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<WelcomePage setUser={setUser}/>}/>
+        <Route path='/animals' element={<Animals user={user}/>}/>
+        <Route path='/:animalID' element={<SingleAnimal/>} />
+        <Route path='images' element={<Images/>} />
+        <Route path='prayer' element={<Prayer/>} />
+        <Route path='idea' element={<Idea/>} />
+      </Routes>
+      </BrowserRouter>
   );
 }
-
 export default App;

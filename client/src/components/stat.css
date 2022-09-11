@@ -1,0 +1,25 @@
+.circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: solid black 2px;
+}
+
+.stats{
+    font-size: 1.5rem;
+}
+
+.label {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
