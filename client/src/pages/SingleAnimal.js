@@ -5,9 +5,10 @@ import { NavLink } from 'react-router-dom';
 import animals from '../Data';
 import mic from '../assets/mic.png';
 import Stat from '../components/stat';
-import settings from '../assets/Brain.png';
+import settings from '../assets/information1.png';
 import arrow from '../assets/arrow.png';
 import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
+import Fade from 'react-reveal/Fade';
 const SingleAnimal = () => {
     const { animalID } = useParams();
     const animal = animals.find((animal) => animal.id === animalID);
@@ -32,26 +33,26 @@ const SingleAnimal = () => {
         {
             command: 'الحمد لله',
             callback: ()=>{
-                setFood((prevfood)=>prevfood+2)
+                setFood((prevfood)=>prevfood+5)
               }
             },
             {
               command: 'لا اله الا الله',
               callback: () => {
-                setWater((prevwater)=>prevwater+2)
+                setWater((prevwater)=>prevwater+5)
               },
             },
             {
               command:'سبحان الله',
               callback: () => {
-                setPlay((prevplay)=>prevplay+2)
+                setPlay((prevplay)=>prevplay+5)
               },
             },
             ,
             {
               command: 'الله اكبر',
               callback: () => {
-                setClean((prevclean)=>prevclean+2)
+                setClean((prevclean)=>prevclean+5)
               },
             },
             {
@@ -69,7 +70,6 @@ const SingleAnimal = () => {
                 </div>
     );
   }
-
             const handleListing = () => {
                 setIsListening(true);
                 microphoneRef.current.classList.add("listening");
@@ -102,8 +102,14 @@ const SingleAnimal = () => {
             className="microphone-icon-container">
                     <img src={mic} className="microphone-icon" />
             </div>
+            {isListening && (
+          <button className="microphone-stop btn" onClick={stopHandle}>
+            Stop
+          </button>)}
             <div className="single-animal-container" >
+                <Fade buttom>
                 <img src={image2} className='single-animal' alt=''/>
+                </Fade>
             </div>
             <div className='stats1'>
             <Stat 

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap');
 .circle {
     display: flex;
     align-items: center;
@@ -5,17 +7,23 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    border: solid black 2px;
+    border: solid #32292A 1px;
+    opacity: 58%;
 }
 
 .stats{
     font-size: 1.5rem;
+    font-family: 'Karla',sans-serif;
+    font-weight: 500;
+    color: #000;
 }
 
 .label {
     font-size: 1.5rem;
-    font-weight: 700;
     text-align: center;
+    font-family: 'Karla',sans-serif;
+    font-weight: 500;
+    color: #32292A;
 }
 
 .container {
