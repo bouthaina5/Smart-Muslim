@@ -1,28 +1,13 @@
 import React from 'react'
 import { useParams} from 'react-router-dom'
-import { useEffect,useState } from 'react';
+import { useEffect,useState,useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import animals from '../Data';
 import mic from '../assets/mic.png';
 import Stat from '../components/stat';
 import settings from '../assets/Brain.png';
-import * as tf from '@tensorflow/tfjs';
-import * as speech from '@tensorflow-models/speech-commands';
 import arrow from '../assets/arrow.png';
-
-var createHost = require('cross-domain-storage/host');
-var createGuest = require('cross-domain-storage/guest');
-var storageHost = createHost([
-    {
-        origin: 'https://storage.googleapis.com/tfjs-speech-model-test/2019-01-03a/dist/index.html',
-        allowedMethods: ['get', 'set', 'remove'],
-    },
-    {
-        origin: 'http://localhost:3000',
-        allowedMethods: ['get'],
-    },
-]);
-
+import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
 const SingleAnimal = () => {
     const { animalID } = useParams();
     const animal = animals.find((animal) => animal.id === animalID);
@@ -36,112 +21,111 @@ const SingleAnimal = () => {
         position:'fixed',
         backgroundRepeat :'no-repeat'
     }  
-        const [food , setFood] = useState(0)
-        const [water , setWater] = useState(0)
-        const [play , setPlay] = useState(0)
-        const [clean , setClean] = useState(0)
-        const [model , setModel] = useState('');
-
-        // useEffect(()=>{
-        //     const model = JSON.parse(localStorage.getItem('SmartMuslim'));
-        //     if(model) {
-        //         setModel(model);            }
-        // },[])
-
-
-        // const Url = {
-        //     model: 'https://storage.googleapis.com/tfjs-speech-model-test/2019-01-03a/dist/index.html'
-        // }
-        /*async function loadModel(Url){
-            try {
-                const model  = await tf.loadGraphModel(Url.model);
-                setModel(model);
-                console.log('load model successful')
-            } catch (err) {
-                console.log(err)
-            }
-        }
-
-        useEffect(()=>{
-            tf.ready().then(()=>loadModel(Url))
-        })*/
-
-        // useEffect(() => {
-        //     setFood(JSON.parse(window.localStorage.getItem('food')));
-        //   }, []);
-        
-        //   useEffect(() => {
-        //     window.localStorage.setItem('food',food);
-        //   }, [food]);
-
-
-        // function add() {
-        //     setFood(prevState => prevState + 1 )
-        // }
-
-        // function sub(){
-        //     setFood(prevState => prevState - 1)
-        // }
-
-        //const model = await tf.loadLayersModel("C:/Users/Bouthayna Ben Hamida/Desktop/PrayersRecognition.json");
+    const [food , setFood] = useState(0)
+    const [water , setWater] = useState(0)
+    const [play , setPlay] = useState(0)
+    const [clean , setClean] = useState(0)    
+    const [isListening, setIsListening] = useState(false);
+    const microphoneRef = useRef(null);
+  
+    const commands = [
+        {
+            command: 'الحمد لله',
+            callback: ()=>{
+                setFood((prevfood)=>prevfood+2)
+              }
+            },
+            {
+              command: 'لا اله الا الله',
+              callback: () => {
+                setWater((prevwater)=>prevwater+2)
+              },
+            },
+            {
+              command:'سبحان الله',
+              callback: () => {
+                setPlay((prevplay)=>prevplay+2)
+              },
+            },
+            ,
+            {
+              command: 'الله اكبر',
+              callback: () => {
+                setClean((prevclean)=>prevclean+2)
+              },
+            },
+            {
+                command: "open *",
+                callback: (website) => {
+                  window.open("http://" + website.split(" ").join(""));
+                },
+              },
+          ];
+        const { transcript, resetTranscript } = useSpeechRecognition({ commands });
+        if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
             return (
+                <div className="mircophone-container">
+                Browser does not Support Speech Recognition.
+                </div>
+    );
+  }
+
+            const handleListing = () => {
+                setIsListening(true);
+                microphoneRef.current.classList.add("listening");
+                SpeechRecognition.startListening({
+                continuous: true,
+                language:'ar-EG',
+                });
+            };
+            const stopHandle = () => {
+                setIsListening(false);
+                microphoneRef.current.classList.remove("listening");
+                SpeechRecognition.stopListening();
+            };
+            const handleReset = () => {
+                stopHandle();
+                resetTranscript();
+            };
+        return (
         <div style={bgStyle} className='backgimage'>
+            {/* <div className='transcript'>{transcript}</div> */}
             <NavLink to={`/animals`}>
                 <img  src={arrow} className='arrow' alt=''/>
             </NavLink>
             <NavLink to={`/images`}>
             <img src={settings} className='settings' alt=''/>
             </NavLink>
-            <button className='mic-button' ><img src={mic} className="mic" alt="" onClick={console.log("listen to command")}/></button>
+            <div 
+            ref={microphoneRef}
+            onClick={handleListing}
+            className="microphone-icon-container">
+                    <img src={mic} className="microphone-icon" />
+            </div>
             <div className="single-animal-container" >
                 <img src={image2} className='single-animal' alt=''/>
             </div>
-            {/* {<button
-                onClick={(e)=>{
-                    e.preventDefault()
-                    var bazStorage = createGuest(
-                        window.location.href === 'http://localhost:3000' 
-                        ? 'https://storage.googleapis.com/tfjs-speech-model-test/2019-01-03a/dist/index.html'
-                        :'http://localhost:3000'
-                    );
-                    bazStorage.get('tfjs-speech-commands-saved-model-metadata',function(error,value){
-                        if(error){
-                            console.log(error)
-                        }
-                        else {
-                            setModel(value)
-                        }
-                    })
-                }}
-            
-            >Access from cross domain Storage</button>
-            <p>value stored in cross domain storage is :{" "} {model} </p>} */}
             <div className='stats1'>
             <Stat 
-                percentage={clean}
+                percentage={food}
                 title= 'food'
             />
             <Stat 
-                percentage={food}
+                percentage={water}
                 title='water'
                 />
             </div>
 
             <div className='stats2'>
             <Stat 
-                percentage={water}
+                percentage={play}
                 title='playing'
                 />
             <Stat 
-                percentage={play}
+                percentage={clean}
                 title='cleanness'
                 />
-            </div> 
-            {/* {<div>
-                <button onClick={add}>add food</button>
-                <button onClick={sub}>sub food</button>
-            </div>} */}
-            
+            </div>            
         </div >
        
    
