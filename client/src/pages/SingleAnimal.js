@@ -1,11 +1,11 @@
-import React from 'react'
-import { useParams} from 'react-router-dom'
-import { useEffect,useState,useRef } from 'react';
+import React ,{useContext} from 'react';
+import { useParams} from 'react-router-dom';
+import {useState,useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import animals from '../Data';
 import mic from '../assets/mic.png';
 import Stat from '../components/stat';
-import settings from '../assets/information1.png';
+import settings from '../assets/Brain.png';
 import arrow from '../assets/arrow.png';
 import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
 import Fade from 'react-reveal/Fade';
@@ -28,6 +28,27 @@ const SingleAnimal = () => {
     const [clean , setClean] = useState(0)    
     const [isListening, setIsListening] = useState(false);
     const microphoneRef = useRef(null);
+
+    // Contexts
+    //const [language] = useContext(LanguageContext);
+    // const [loaded, data] = useContext(FetchedDataContext);
+
+    // // Get Prayer Time
+    // const timings = loaded && data.timings;
+
+    // // Remove additional data
+    // const additional = ['Sunrise', 'Imsak','Midnight', 'Sunset', 'Firstthird', 'Lastthird'];
+    // additional.forEach(i => delete timings[i]);
+
+    // // Get Prayer Names
+    // const prayer_en =  Object.keys(timings);
+    // const prayer_ar = [ 'الفجر', 'الظهر','العصر','المغرب', 'العشاء'];
+    // const prayerNames = language === "en" ? prayer_en : prayer_ar;
+
+    // // Get Prayer Times
+    // const prayTimes =  Object.values(timings);
+    // const  [remaineTime, nextPray] = useNextPrayer(prayTimes);
+
   
     const commands = [
         {
@@ -40,6 +61,7 @@ const SingleAnimal = () => {
               command: 'لا اله الا الله',
               callback: () => {
                 setWater((prevwater)=>prevwater+5)
+
               },
             },
             {
@@ -56,11 +78,101 @@ const SingleAnimal = () => {
               },
             },
             {
-                command: "open *",
-                callback: (website) => {
-                  window.open("http://" + website.split(" ").join(""));
-                },
+              command: "ربي زدني علما",
+              callback: ()=>{
+                setFood((prevfood)=>prevfood+5)
+              }
+            },
+            {
+              command: "اللهم اني اسالك الهدى",
+              callback: ()=>{
+                setFood((prevfood)=>prevfood+5)
+              }
+            },
+            {
+              command: "اللهم اجعل في قلبي نورا",
+              callback: ()=>{
+                setFood((prevfood)=>prevfood+5)
+              }
+            },
+            {
+              command: "ربي اشرح لي صدري",
+              callback: ()=>{
+                setFood((prevfood)=>prevfood+5)
+              }
+            },
+            {
+              command: "ربنا تقبل منا",
+              callback: () => {
+                setWater((prevwater)=>prevwater+5)
               },
+            },
+            {
+              command: "ربنا اتنا في الدنيا حسنه",
+              callback: () => {
+                setWater((prevwater)=>prevwater+5)
+              },
+            },
+            {
+              command: "ربنا اتنا من لدنك رحمه",
+              callback: () => {
+                setWater((prevwater)=>prevwater+5)
+              },
+            }, {
+              command: "ربنا اغفر لنا ذنوبنا",
+              callback: () => {
+                setWater((prevwater)=>prevwater+5)
+              },
+            },
+            {
+              command: "اللهم اعنا على شكرك",
+              callback: () => {
+                setClean((prevclean)=>prevclean+5)
+              },
+            },
+            {
+              command: "ربنا اتمم لنا نورنا",
+              callback: () => {
+                setClean((prevclean)=>prevclean+5)
+              },
+            },
+            {
+              command: "ربي اعوذ بك من همزات الشياطين",
+              callback:() => {
+                setClean((prevclean)=>prevclean+5)
+              },
+            },
+            {
+              command: "ربنا هب لنا من ذرياتنا قره اعين",
+              callback: () => {
+                setClean((prevclean)=>prevclean+5)
+              },
+            },
+            {
+              command: "ربي اجعلني مقيم الصلاه",
+              callback: () => {
+                setPlay((prevplay)=>prevplay+5)
+              },
+            },
+            {
+              command: "ربنا افرغ علينا صبرا",
+              callback: () => {
+                setPlay((prevplay)=>prevplay+5)
+              },
+            },
+            {
+              command: "ربي انزلني منزلا مباركا",
+              callback: () => {
+                setPlay((prevplay)=>prevplay+5)
+              },
+            },
+            {
+              command: "ربي اني كنت من الظالمين",
+              callback: () => {
+                setPlay((prevplay)=>prevplay+5)
+              },
+            },
+
           ];
         const { transcript, resetTranscript } = useSpeechRecognition({ commands });
         if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
@@ -87,14 +199,19 @@ const SingleAnimal = () => {
                 stopHandle();
                 resetTranscript();
             };
+
         return (
         <div style={bgStyle} className='backgimage'>
-            {/* <div className='transcript'>{transcript}</div> */}
+          <NavLink to={`/images`}>
+            <div className='settings'>
+              <img src={settings}  alt='' className='brain'/>
+            </div>
+            </NavLink>
+          {/* <Fade top>
+            <div className='transcript'>{transcript}</div> 
+          </Fade> */}
             <NavLink to={`/animals`}>
                 <img  src={arrow} className='arrow' alt=''/>
-            </NavLink>
-            <NavLink to={`/images`}>
-            <img src={settings} className='settings' alt=''/>
             </NavLink>
             <div 
             ref={microphoneRef}

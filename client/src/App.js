@@ -11,13 +11,14 @@ import { useState } from 'react';
 
 const App = () => {
   const [user,setUser] = useState(null)
+  const [prayer,setPrayer]=useState('');
   return (
       <BrowserRouter>
       <Routes>
         <Route path='/' element={<WelcomePage setUser={setUser}/>}/>
         <Route path='/animals' element={<Animals user={user}/>}/>
-        <Route path='/:animalID' element={<SingleAnimal/>} />
-        <Route path='images' element={<Images/>} />
+        <Route path='/:animalID' element={<SingleAnimal  />} />
+        <Route path='images' element={<Images  />} />
         <Route path='prayer' element={<Prayer/>} />
         <Route path='idea' element={<Idea/>} />
       </Routes>
