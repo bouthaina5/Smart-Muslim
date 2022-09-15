@@ -34,14 +34,15 @@ App
 
 .dark{
   background-image: url(https://www.reviewofreligions.org/wp-content/uploads/2020/04/ramadan-3384596_1280.jpg);
- background-size: cover;
+  background-size: 100% 100%;
+  
   background-color: $clr-dark;
   color: $clr-light;
 }
 
 .light{
   background-image: url(https://img.freepik.com/premium-photo/islamic-decoration-background-with-arabic-lantern-crescent-star-copy-space_257995-594.jpg?w=2000);
-  background-size: cover;
+  background-size: 100% 100%;
   background-color: $clr-light;
   color: $clr-dark;
 }

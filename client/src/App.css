@@ -33,14 +33,32 @@ body{
 }
 .backg {
  
-  background-image: url(./assets/anim3.png);
+  background-image: url(./assets/animals.png);
   position: fixed;
   text-align: center;
   width: 100%;
   height: 100%;
-  background-size: contain;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.transcript {
+ position: absolute;
+ top : 40%;
+ left: 46%;
+  color: #fff;
+}
+
+.description {
+  color : #282c34;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  top: 36%;
+  left: 36%;
+  position: absolute;
+  line-height: 1.8em;
 }
 
 .food{
@@ -53,6 +71,8 @@ body{
   font-size: 25px;
   top:30%;
   color: #3b3c47;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 300;
 }
 
 .playing{
@@ -65,6 +85,8 @@ body{
   font-size: 25px;
   letter-spacing: 7px;
   color: #3b3c47;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 300;
 }
 .cleanness{
   width: 200px;
@@ -76,6 +98,8 @@ body{
   font-size: 25px;
   letter-spacing: 7px;
   color: #3b3c47;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 300;
 }
 .water{
   width: 200px;
@@ -87,6 +111,8 @@ body{
   top: 47%;
   letter-spacing: 7px;
   color: #3b3c47;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 300;
 }
 
 h1{
@@ -120,8 +146,8 @@ h1{
 }
 
 .imag4{
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 90px;
   margin-top: -100%;
   margin-left: 2%;  
 }
@@ -146,34 +172,56 @@ h1{
   margin-left: 30px;
 }
 .para{
-  font-family: cartoon;
+  font-family: 'Karla',sans-serif;
   font-size: 25px;
-  font-weight: bold;
+  font-weight: 700;
   text-align: center;
   top: 5%;
   letter-spacing: 8px;
   color: #282c34;
 }
-select{
+
+.s1{
+  font-size: 1rem;
+  width: 360px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   padding: 1em 7em 1.5em;
   background: #4d5061;
   color: white;
   border: 10;
-  text-align: center;  
-}
-.s1{
-  font-size: 1rem;
+  text-align: center; 
 }
 .s2{
   font-size: 1rem;
+  width: 360px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  padding: 1em 7em 1.5em;
+  background: #4d5061;
+  color: white;
+  border: 10;
+  text-align: center;
 }
 .s3{
   font-size: 1rem;
+  width: 360px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  padding: 1em 7em 1.5em;
+  background: #4d5061;
+  color: white;
+  border: 10;
+  text-align: center;
 }
 .s4{
   font-size: 1rem;
+  width: 360px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  padding: 1em 7em 1.5em;
+  background: #4d5061;
+  color: white;
+  border: 10;
+  text-align: center;
 }
+
 .custom-select{
   position: absolute;
   top: 40%;
@@ -191,11 +239,11 @@ select{
     position: fixed;
     
 }
+
 .custom-select1{
   position: absolute;
   top: 55%;
   left: 17%;
-  grid-template: auto / auto auto auto;
 }
 
 
@@ -207,14 +255,12 @@ select{
     color: var(--primary-500);
 }
 .custom-select2{
-
   position: absolute;
   top: 70%;
   left: 17%;
 }
 
 .custom-select3{
- 
   position: absolute;
   top: 85%;
   left: 17%;
@@ -237,17 +283,6 @@ select{
     margin-top: 10px;
     max-height: min-content;
   }
-}
-
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
 }
 .bg {
   color: white;
@@ -279,8 +314,9 @@ select{
 }
 
  .form {
-  top : 2%;
-  position: relative;
+  position:absolute;
+  left: 42%;
+  top: 38%; 
  }
 
  .user {
@@ -299,7 +335,6 @@ select{
   border-radius: 0.4rem;
   color:grey;
   font-size: 1rem;
-  /* box-shadow: inset 0 1px 2px rgba(0,0,0,.39), 0 -1px 1px #FFF, 0 1px 0 #FFF; */
 }
 .animal-image {
     width: 110px;
@@ -423,17 +458,19 @@ select{
 }
 
 .settings {
-  height: 50px;
-  width: 50px;
-  top: 50%;
-  left : 30%
+  top: 8%;
+  left : 89%; 
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  
 }
 
 .arrow {
     display: flex;
     padding: 10px;
-    height: 50px;
-    width: 70px;
+    height: 90px;
+    width: 100px;
     position: absolute;
     margin-top: 20px;
 }
@@ -468,8 +505,6 @@ select{
   font-size: 1.5rem;
   font-family: 'Karla',sans-serif;
   font-weight: 500;
-
-
 }
  .welcome-back {
   display: flex;
@@ -501,4 +536,29 @@ select{
   align-items: center;
   justify-content: center;
 } */
+
+.register {
+  position: absolute;
+
+}
  
+.notification {
+  position: absolute;
+  top: 87%;
+  left : 3%;
+  border: none;
+  padding: 1%;
+  background-color: #A5D0A8;
+  font-family: 'Karla',sans-serif;
+  font-weight: 700;
+  outline: none;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 25px;
+  box-shadow: 0px 0px 10px 5px #ffffff1a;
+}
+
+.brain {
+  width : 80px;
+  height: 80px;
+}

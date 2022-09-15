@@ -9,6 +9,7 @@ const Welcomepage = ({ setUser }) => {
         e.preventDefault();
         if (!name) return;
         setUser({ name: name});
+        localStorage.setItem('all-users',name)
         navigate('/animals');
     };
     return (

@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 import exit from '../assets/exit.png';
 import param from '../assets/settings.png'
 import Fade from 'react-reveal/Fade';
-const Animals = ({user}) => {
+const Animals = () => {
 
     const animalsList = animals.map(({id,name,image,bgImage})=>{
         return (
@@ -13,26 +13,43 @@ const Animals = ({user}) => {
                     <img src={image} className='animal-image' alt=""/>
                 </NavLink>
                 </Fade>)})
-                
-    const container = {
-        hidden: { opacity: 1, scale: 0 },
-        visible: {
-          opacity: 1,
-          scale: 1,
-          transition: {
-            delayChildren: 0.3,
-            staggerChildren: 0.2
+
+      // const createScheduledNotification = async(tag,title)=>{
+      //   const registration = await navigator.serviceWorker.getRegistration();
+      //   registration.showNotification(title,{
+      //     tag: tag,
+      //     body : 'this notification was scheduled 30 seconds ago',
+      //     showTrigger : new TimestampTrigger( 30 * 1000)
+      //   });
+      // };
+
+      navigator.serviceWorker.register('sw.js');
+      function showNotification() {
+        Notification.requestPermission((result) => {
+          if (result === 'granted') {
+            navigator.serviceWorker.ready.then((registration) => {
+              registration.showNotification('Vibration Sample', {
+                body: 'Buzz! Buzz!',
+                vibrate: [200, 100, 200, 100, 200, 100, 200],
+                tag: 'vibration-sample',
+                timestamp: 30,
+              });
+            });
           }
-        }
-      };
+        });
+      }
       
+
   return (
     <main className='animals-container'>
+          <button className="notification" onClick={showNotification}>
+            Allow Notifications
+          </button>
         <Fade top>
         <p className='welcome-back'>Welcome back,</p>
         </Fade>
         <Fade bottom>
-        <p className='userName'>{user?.name}!</p>
+        <p className='userName'>{localStorage.getItem('all-users')}!</p>
         </Fade>
         <img src={exit} className='exit' alt=""/>
         <NavLink to ='/idea'>
